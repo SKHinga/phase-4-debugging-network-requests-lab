@@ -62,12 +62,17 @@ developing your own process.
 
 - Add a new toy when the toy form is submitted
 
-  - How I debugged:
+  - How I debugged: I checked the console and so the error POST http://localhost:4000/toys 500 (Internal Server Error)
+
+  meaning I should check my backend logs. The error was a NameError (uninitialized constant ToysController::Toys). Meaning a typo which I then fixed.
 
 - Update the number of likes for a toy
 
-  - How I debugged:
+  - How I debugged: I cheched on network and saw a status 204 no content meaning there's an issue on my backend.
+
+  This means no json is being returned. Fixed by rendering JSON.
 
 - Donate a toy to Goodwill (and delete it from our database)
 
-  - How I debugged:
+  - How I debugged: Error recieved is DELETE http://localhost:4000/toys/8 404 (Not Found)
+  On the backend log, I recieved a no route error meaning the destroy route is not in place.
